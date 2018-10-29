@@ -37,7 +37,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.442"
-        app:srcCompat="@drawable/forkert1"
+        app:srcCompat="@drawable/hoved"
         tools:layout_editor_absoluteX="78dp"
         tools:layout_editor_absoluteY="74dp" />
 
@@ -55,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.442"
-        app:srcCompat="@drawable/forkert2"
+        app:srcCompat="@drawable/krop"
         tools:layout_editor_absoluteX="78dp"
         tools:layout_editor_absoluteY="74dp" />
 
@@ -72,15 +72,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415"
-        app:srcCompat="@drawable/forkert3"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="74dp" />
+        app:layout_constraintVertical_bias="0.437"
+        app:srcCompat="@drawable/arm1" />
 
     <ImageView
         android:id="@+id/arm2"
         android:layout_width="204dp"
-        android:layout_height="204dp"
+        android:layout_height="205dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -88,43 +86,36 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/ord"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.432"
-        app:srcCompat="@drawable/forkert4"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="74dp" />
+        app:layout_constraintVertical_bias="0.442"
+        app:srcCompat="@drawable/arm2" />
 
     <ImageView
         android:id="@+id/ben1"
         android:layout_width="204dp"
-        android:layout_height="204dp"
+        android:layout_height="207dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="48dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/forkert5"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="74dp" />
+        app:srcCompat="@drawable/ben1" />
 
     <ImageView
         android:id="@+id/ben2"
         android:layout_width="204dp"
-        android:layout_height="204dp"
+        android:layout_height="208dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="48dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/forkert6"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="74dp" />
+        app:srcCompat="@drawable/ben2" />
 
     <LinearLayout
         android:id="@+id/layoutTilføjBogstav"
@@ -166,32 +157,33 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:text="Tjek" />
+            android:text="Tjek"
+            android:background="#F49F0A" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/ord"
         android:layout_width="351dp"
-        android:layout_height="37dp"
+        android:layout_height="41dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="56dp"
         android:gravity="center"
-        android:textSize="24sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ben2" />
 
     <TextView
         android:id="@+id/forkertBogstav"
-        android:layout_width="126dp"
+        android:layout_width="118dp"
         android:layout_height="38dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:textColor="@android:color/holo_red_dark"
+        android:textColor="#F49F0A"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -202,8 +194,8 @@
 
     <TextView
         android:id="@+id/tabtSpil"
-        android:layout_width="280dp"
-        android:layout_height="51dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -211,7 +203,7 @@
         android:gravity="center"
         android:text="Spillet er tabt"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="30sp"
+        android:textSize="50sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
