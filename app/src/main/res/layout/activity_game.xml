@@ -9,32 +9,139 @@
     tools:layout_editor_absoluteY="81dp">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/galge"
         android:layout_width="204dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="69dp"
-        app:layout_constraintBottom_toTopOf="@+id/layoutBogstaver"
+        android:layout_height="204dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/ord"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.442"
         app:srcCompat="@drawable/galge" />
+
+    <ImageView
+        android:id="@+id/hoved"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/ord"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.442"
+        app:srcCompat="@drawable/forkert1"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="74dp" />
+
+    <ImageView
+        android:id="@+id/krop"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/ord"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.442"
+        app:srcCompat="@drawable/forkert2"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="74dp" />
+
+    <ImageView
+        android:id="@+id/arm1"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/ord"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.415"
+        app:srcCompat="@drawable/forkert3"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="74dp" />
+
+    <ImageView
+        android:id="@+id/arm2"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/ord"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.432"
+        app:srcCompat="@drawable/forkert4"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="74dp" />
+
+    <ImageView
+        android:id="@+id/ben1"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/forkert5"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="74dp" />
+
+    <ImageView
+        android:id="@+id/ben2"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/forkert6"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="74dp" />
 
     <LinearLayout
         android:id="@+id/layoutTilføjBogstav"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="61dp"
+        android:layout_width="344dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutBogstaver">
+        app:layout_constraintTop_toBottomOf="@+id/ord">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/indtastBogstav"
             android:layout_width="136dp"
             android:layout_height="52dp"
             android:layout_weight="1"
@@ -44,70 +151,72 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/bogstav"
             android:layout_width="6dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:maxLength="1" />
 
         <Button
-            android:id="@+id/checkBogstav"
+            android:id="@+id/tjekBogstav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:text="Check" />
+            android:text="Tjek" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/layoutBogstaver"
-        android:layout_width="158dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/layoutTilføjBogstav"
+    <TextView
+        android:id="@+id/ord"
+        android:layout_width="351dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="88dp"
+        android:gravity="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ben2" />
+
+    <TextView
+        android:id="@+id/forkertBogstav"
+        android:layout_width="126dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <TextView
+        android:id="@+id/tabtSpil"
+        android:layout_width="280dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Spillet er tabt"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.364" />
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="_"
-            android:textSize="30sp" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="_"
-            android:textSize="30sp" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="_"
-            android:textSize="30sp" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="_"
-            android:textSize="30sp" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="_"
-            android:textSize="30sp" />
-    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
