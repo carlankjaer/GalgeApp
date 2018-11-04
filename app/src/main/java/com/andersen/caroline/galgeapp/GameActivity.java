@@ -68,7 +68,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 findViewById(R.id.ben2).setVisibility(View.VISIBLE);
                 break;
         }
-        if(spil.erSpilletSlut())
+        if(spil.erSpilletTabt())
             findViewById(R.id.tabtSpil).setVisibility(View.VISIBLE);
+        if (spil.erSpilletVundet())
+            findViewById(R.id.spilletErVundet).setVisibility(View.VISIBLE);
     }
 }
