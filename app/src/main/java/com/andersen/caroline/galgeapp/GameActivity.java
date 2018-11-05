@@ -1,5 +1,7 @@
 package com.andersen.caroline.galgeapp;
 
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,12 +27,23 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         ord = findViewById(R.id.ord);
         forkertBogstav = findViewById(R.id.forkertBogstav);
 
-        spil.nulstil();
-        try {
-            spil.hentOrdFraDr();
-        } catch (Exception e) {
-            e.printStackTrace();
+        class AsyncTask1 extends AsyncTask {
+
+            @Override
+            protected Object doInBackground(Object... arg0) {
+                try {
+                    spil.hentOrdFraDr();
+                    return "Ordene blev korrekt hentet fra DR's server";
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return "Ordene blev ikke hentet korrekt: "+e;
+                }
+            }
         }
+        new AsyncTask1().execute();
+
+        spil.nulstil();
+
         spil.logStatus();
 
         ord.setText(spil.getSynligtOrd());
