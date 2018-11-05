@@ -9,50 +9,53 @@
     tools:layout_editor_absoluteY="81dp">
 
     <Button
-        android:id="@+id/highScore"
+        android:id="@+id/hjælp"
         android:layout_width="208dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="185dp"
         android:background="#F49F0A"
         android:text="Hjælp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/overskrift"
-        app:layout_constraintVertical_bias="0.309" />
+        app:layout_constraintTop_toBottomOf="@+id/highScore" />
+
+    <Button
+        android:id="@+id/highScore"
+        android:layout_width="208dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:background="#F49F0A"
+        android:text="High Score"
+        app:layout_constraintBottom_toTopOf="@+id/hjælp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nytSpil" />
 
     <TextView
         android:id="@+id/overskrift"
         android:layout_width="164dp"
-        android:layout_height="98dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="95dp"
+        android:layout_marginBottom="56dp"
         android:fontFamily="@font/annie_use_your_telescope"
         android:text="Galgeleg"
         android:textColor="#EFCA08"
         android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/nytSpil"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/nytSpil"
         android:layout_width="208dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Nyt Spil"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
         android:background="#F49F0A"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Nyt Spil"
+        app:layout_constraintBottom_toTopOf="@+id/highScore"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/overskrift"
-        app:layout_constraintVertical_bias="0.14" />
+        app:layout_constraintTop_toBottomOf="@+id/overskrift" />
 
 </android.support.constraint.ConstraintLayout>
