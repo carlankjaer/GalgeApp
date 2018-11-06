@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    tools:context=".GalgeFragment">
+
+    <ImageView
+        android:id="@+id/galge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/galge" />
+
+    <ImageView
+        android:id="@+id/hoved"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/hoved"/>
+
+    <ImageView
+        android:id="@+id/krop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/krop"/>
+
+    <ImageView
+        android:id="@+id/arm1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/arm1"/>
+
+    <ImageView
+        android:id="@+id/arm2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/arm2"/>
+
+    <ImageView
+        android:id="@+id/ben1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ben1"/>
+
+    <ImageView
+        android:id="@+id/ben2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ben2"/>
+
+</RelativeLayout>

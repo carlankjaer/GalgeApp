@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:context=".GaetBogstavFragment">
+
+    <TextView
+        android:id="@+id/indtastBogstav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Indtast bogstav"
+        android:fontFamily="@font/annie_use_your_telescope"
+        android:textColor="#EFCA08"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/bogstav"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_marginLeft="20dp"/>
+
+    <Button
+        android:id="@+id/tjekBogstav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:background="#F49F0A"
+        android:text="Tjek" />
+
+</LinearLayout>

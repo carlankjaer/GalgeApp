@@ -1,20 +1,21 @@
 package com.andersen.caroline.galgeapp;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
 
     Galgelogik spil;
     private EditText bogstav;
-    private TextView ord, forkertBogstav;
+    private TextView ord, forkertBogstav, load;
     private Button tjekBogstav;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +27,19 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         tjekBogstav = findViewById(R.id.tjekBogstav);
         ord = findViewById(R.id.ord);
         forkertBogstav = findViewById(R.id.forkertBogstav);
+        load = findViewById(R.id.load);
+        progressBar = findViewById(R.id.progressBar);
 
         class AsyncTask1 extends AsyncTask {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                progressBar.setVisibility(View.VISIBLE);
+                load.setVisibility(View.VISIBLE);
+                tjekBogstav.setEnabled(false);
+                bogstav.setEnabled(false);
+            }
 
             @Override
             protected Object doInBackground(Object... arg0) {
@@ -39,14 +51,19 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                     return "Ordene blev ikke hentet korrekt: "+e;
                 }
             }
+
+            @Override
+            protected void onPostExecute(Object resultat) {
+                progressBar.setVisibility(View.INVISIBLE);
+                load.setVisibility(View.INVISIBLE);
+                tjekBogstav.setEnabled(true);
+                bogstav.setEnabled(true);
+                spil.nulstil();
+                spil.logStatus();
+                ord.setText(spil.getSynligtOrd());
+            }
         }
         new AsyncTask1().execute();
-
-        spil.nulstil();
-
-        spil.logStatus();
-
-        ord.setText(spil.getSynligtOrd());
 
         tjekBogstav.setOnClickListener(this);
     }
@@ -82,8 +99,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
         if(spil.erSpilletTabt())
-            findViewById(R.id.tabtSpil).setVisibility(View.VISIBLE);
+            
         if (spil.erSpilletVundet())
-            findViewById(R.id.spilletErVundet).setVisibility(View.VISIBLE);
+
     }
 }
