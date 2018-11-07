@@ -40,13 +40,19 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
                 fragmentTransaction1.commit();
                 break;
             case R.id.highScore:
-                System.out.println("Du trykkede på High score!");
+                FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
+                fragmentTransaction2.replace(R.id.frameLayout, new HighScoreFragment()).addToBackStack("tilbage");
+                fragmentTransaction2.commit();
                 break;
             case R.id.indstillinger:
-                System.out.println("Du trykkede på Indstillinger!");
+                FragmentTransaction fragmentTransaction3 = getFragmentManager().beginTransaction();
+                fragmentTransaction3.replace(R.id.frameLayout, new IndstillingerFragment()).addToBackStack("tilbage");
+                fragmentTransaction3.commit();
                 break;
             case R.id.hjælp:
-                System.out.println("Du trykkede på Hjælp!");
+                FragmentTransaction fragmentTransaction4 = getFragmentManager().beginTransaction();
+                fragmentTransaction4.replace(R.id.frameLayout, new HjaelpFragment()).addToBackStack("tilbage");
+                fragmentTransaction4.commit();
                 break;
         }
     }
