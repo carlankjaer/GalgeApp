@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="220dp"
+    android:layout_height="220dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".VinderFragment">
+
+    <TextView
+        android:id="@+id/vundetText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Du har vundet!"
+        android:textColor="#EFCA08"
+        android:fontFamily="@font/annie_use_your_telescope"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/antalForsøgTekst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:layout_gravity="center" />
+
+</LinearLayout>

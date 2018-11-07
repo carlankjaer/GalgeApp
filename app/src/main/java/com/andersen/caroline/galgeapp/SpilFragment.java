@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,6 @@ public class SpilFragment extends Fragment implements View.OnClickListener {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        @SuppressLint("StaticFieldLeak")
         class AsyncTask1 extends AsyncTask {
 
             @Override
@@ -108,8 +108,16 @@ public class SpilFragment extends Fragment implements View.OnClickListener {
                 getView().findViewById(R.id.ben2).setVisibility(View.VISIBLE);
                 break;
         }
-        //if(spil.erSpilletTabt())
+        if(spil.erSpilletTabt()) {
+            FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
+            fragmentTransaction2.replace(R.id.frameLayout, new TaberFragment()).addToBackStack(null);
+            fragmentTransaction2.commit();
+        }
 
-        //if (spil.erSpilletVundet())
+        if (spil.erSpilletVundet()) {
+            FragmentTransaction fragmentTransaction3 = getFragmentManager().beginTransaction();
+            fragmentTransaction3.replace(R.id.frameLayout, new VinderFragment()).addToBackStack(null);
+            fragmentTransaction3.commit();
+        }
     }
 }
