@@ -1,42 +1,37 @@
 package com.andersen.caroline.galgeapp;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-public class GameActivity extends AppCompatActivity implements View.OnClickListener {
+public class SpilFragment extends Fragment implements View.OnClickListener {
 
     Galgelogik spil;
     private EditText bogstav;
-    private TextView ord, forkertBogstav, load;
+    private TextView ord, forkertBogstav, loadText;
     private Button tjekBogstav;
     private ProgressBar progressBar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
-        spil = new Galgelogik();
-        bogstav = findViewById(R.id.bogstav);
-        tjekBogstav = findViewById(R.id.tjekBogstav);
-        ord = findViewById(R.id.ord);
-        forkertBogstav = findViewById(R.id.forkertBogstav);
-        load = findViewById(R.id.load);
-        progressBar = findViewById(R.id.progressBar);
-
+        @SuppressLint("StaticFieldLeak")
         class AsyncTask1 extends AsyncTask {
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
                 progressBar.setVisibility(View.VISIBLE);
-                load.setVisibility(View.VISIBLE);
+                loadText.setVisibility(View.VISIBLE);
                 tjekBogstav.setEnabled(false);
                 bogstav.setEnabled(false);
             }
@@ -55,17 +50,32 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             protected void onPostExecute(Object resultat) {
                 progressBar.setVisibility(View.INVISIBLE);
-                load.setVisibility(View.INVISIBLE);
+                loadText.setVisibility(View.INVISIBLE);
                 tjekBogstav.setEnabled(true);
                 bogstav.setEnabled(true);
-                spil.nulstil();
                 spil.logStatus();
                 ord.setText(spil.getSynligtOrd());
             }
         }
         new AsyncTask1().execute();
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_spil, container, false);
+
+        spil = new Galgelogik();
+        bogstav = view.findViewById(R.id.bogstav);
+        tjekBogstav = view.findViewById(R.id.tjekBogstav);
+        ord = view.findViewById(R.id.ord);
+        forkertBogstav = view.findViewById(R.id.forkertBogstav);
+        loadText = view.findViewById(R.id.loadText);
+        progressBar = view.findViewById(R.id.progressBar);
 
         tjekBogstav.setOnClickListener(this);
+
+        return view;
     }
 
     @Override
@@ -80,27 +90,26 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (spil.getAntalForkerteBogstaver()) {
             case 1:
-                findViewById(R.id.hoved).setVisibility(View.VISIBLE);
+                getView().findViewById(R.id.hoved).setVisibility(View.VISIBLE);
                 break;
             case 2:
-                findViewById(R.id.krop).setVisibility(View.VISIBLE);
+                getView().findViewById(R.id.krop).setVisibility(View.VISIBLE);
                 break;
             case 3:
-                findViewById(R.id.arm1).setVisibility(View.VISIBLE);
+                getView().findViewById(R.id.arm1).setVisibility(View.VISIBLE);
                 break;
             case 4:
-                findViewById(R.id.arm2).setVisibility(View.VISIBLE);
+                getView().findViewById(R.id.arm2).setVisibility(View.VISIBLE);
                 break;
             case 5:
-                findViewById(R.id.ben1).setVisibility(View.VISIBLE);
+                getView().findViewById(R.id.ben1).setVisibility(View.VISIBLE);
                 break;
             case 6:
-                findViewById(R.id.ben2).setVisibility(View.VISIBLE);
+                getView().findViewById(R.id.ben2).setVisibility(View.VISIBLE);
                 break;
         }
-        if(spil.erSpilletTabt())
-            
-        if (spil.erSpilletVundet())
+        //if(spil.erSpilletTabt())
 
+        //if (spil.erSpilletVundet())
     }
 }

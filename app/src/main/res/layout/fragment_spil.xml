@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="340dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SpilFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/brugteBogstaverTekst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forkerte bogstaver: "
+            android:fontFamily="@font/annie_use_your_telescope"
+            android:textColor="#EFCA08"
+            android:textSize="30sp"/>
+
+        <TextView
+            android:id="@+id/forkertBogstav"
+            android:layout_width="118dp"
+            android:layout_height="38dp"
+            android:textColor="#000"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="122dp">
+
+        <ImageView
+            android:id="@+id/galge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/galge" />
+
+        <ImageView
+            android:id="@+id/hoved"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/hoved" />
+
+        <ImageView
+            android:id="@+id/krop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/krop" />
+
+        <ImageView
+            android:id="@+id/arm1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/arm1" />
+
+        <ImageView
+            android:id="@+id/arm2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/arm2" />
+
+        <ImageView
+            android:id="@+id/ben1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ben1" />
+
+        <ImageView
+            android:id="@+id/ben2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ben2" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/ord"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="121dp"
+        android:gravity="center"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/indtastBogstav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/annie_use_your_telescope"
+            android:text="Indtast bogstav"
+            android:textColor="#EFCA08"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/bogstav"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:inputType="text"
+            android:gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/tjekBogstav"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:background="#F49F0A"
+            android:text="Tjek" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="103dp"
+            android:layout_height="113dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/loadText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Vent venligst"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

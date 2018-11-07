@@ -2,9 +2,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="272dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
     tools:context=".MenuFragment">
+
+    <TextView
+        android:id="@+id/overskrift"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:fontFamily="@font/annie_use_your_telescope"
+        android:text="Galgeleg"
+        android:textColor="#EFCA08"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/nytSpil"
@@ -12,7 +28,7 @@
         android:layout_height="60dp"
         android:background="#F49F0A"
         android:text="@string/nyt_spil"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="150dp" />
 
     <Button
         android:id="@+id/highScore"
