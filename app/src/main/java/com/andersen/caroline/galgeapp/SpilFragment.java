@@ -120,8 +120,14 @@ public class SpilFragment extends Fragment implements View.OnClickListener {
         }
 
         if (spil.erSpilletVundet()) {
+            Bundle bundle = new Bundle();
+            bundle.putInt("antalForsøg", spil.getAntalForkerteBogstaver());
+
+            VinderFragment vinderFragment = new VinderFragment();
+            vinderFragment.setArguments(bundle);
+
             FragmentTransaction fragmentTransaction3 = getFragmentManager().beginTransaction();
-            fragmentTransaction3.replace(R.id.frameLayout, new VinderFragment()).addToBackStack(null);
+            fragmentTransaction3.replace(R.id.frameLayout, vinderFragment).addToBackStack(null);
             fragmentTransaction3.commit();
         }
     }

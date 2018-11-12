@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 public class VinderFragment extends Fragment {
 
-    Galgelogik spil;
     TextView antalForsøgTekst;
 
     @Override
@@ -17,10 +16,11 @@ public class VinderFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_vinder, container, false);
 
-        spil = new Galgelogik();
         antalForsøgTekst = view.findViewById(R.id.antalForsøgTekst);
 
-        antalForsøgTekst.setText("Du brugte " + spil.getAntalForkerteBogstaver() + " forsøg");
+        Bundle bundle = this.getArguments();
+
+        antalForsøgTekst.setText("Du brugte " + bundle.getInt("antalForsøg") + " forsøg");
 
         return view;
     }
