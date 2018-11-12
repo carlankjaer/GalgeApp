@@ -18,4 +18,9 @@
         android:fontFamily="@font/annie_use_your_telescope"
         android:textColor="#EFCA08"/>
 
+    <ListView
+        android:id="@+id/highScoreListe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

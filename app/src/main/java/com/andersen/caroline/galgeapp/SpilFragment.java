@@ -1,5 +1,6 @@
 package com.andersen.caroline.galgeapp;
 
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -120,6 +121,8 @@ public class SpilFragment extends Fragment implements View.OnClickListener {
         }
 
         if (spil.erSpilletVundet()) {
+            
+
             Bundle bundle = new Bundle();
             bundle.putInt("antalForsøg", spil.getAntalForkerteBogstaver());
 
