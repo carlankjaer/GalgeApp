@@ -1,6 +1,5 @@
 package com.andersen.caroline.galgeapp;
 
-import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -109,8 +108,14 @@ public class SpilFragment extends Fragment implements View.OnClickListener {
                 break;
         }
         if(spil.erSpilletTabt()) {
+            Bundle bundle = new Bundle();
+            bundle.putString("ord", spil.getOrdet());
+
+            TaberFragment taberFragment = new TaberFragment();
+            taberFragment.setArguments(bundle);
+
             FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
-            fragmentTransaction2.replace(R.id.frameLayout, new TaberFragment()).addToBackStack(null);
+            fragmentTransaction2.replace(R.id.frameLayout, taberFragment).addToBackStack(null);
             fragmentTransaction2.commit();
         }
 

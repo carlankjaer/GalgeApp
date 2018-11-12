@@ -17,5 +17,4 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.add(R.id.frameLayout, new MenuFragment());
         fragmentTransaction.commit();
     }
-
 }

@@ -1,6 +1,5 @@
 package com.andersen.caroline.galgeapp;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -22,7 +21,9 @@ public class TaberFragment extends Fragment {
         spil = new Galgelogik();
         rigtigtOrd = view.findViewById(R.id.rigtigtOrd);
 
-        rigtigtOrd.setText("Ordet var: ");
+        Bundle bundle = this.getArguments();
+
+        rigtigtOrd.setText("Ordet var: " + bundle.getString("ord"));
 
         return view;
     }
