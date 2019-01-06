@@ -5,17 +5,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
-    tools:context=".IndstillingerFragment">
+    tools:context=".RedigerOrdFragment">
 
     <TextView
         android:id="@+id/indstillingerOverskrift"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Indstillinger"
+        android:text="Rediger Ord"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:textSize="40sp"
         android:fontFamily="@font/annie_use_your_telescope"
         android:textColor="#EFCA08"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp">
+    </android.support.v7.widget.RecyclerView>
+
+
 
 </FrameLayout>

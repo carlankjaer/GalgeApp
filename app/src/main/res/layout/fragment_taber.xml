@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="220dp"
-    android:layout_height="220dp"
+    android:layout_height="300dp"
     android:layout_gravity="center"
     android:orientation="vertical"
     tools:context=".TaberFragment">
@@ -11,18 +11,35 @@
         android:id="@+id/tabtText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Du har tabt!"
-        android:textColor="#EFCA08"
-        android:fontFamily="@font/annie_use_your_telescope"
-        android:textSize="30sp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal"/>
+        android:fontFamily="@font/annie_use_your_telescope"
+        android:text="@string/du_har_tabt"
+        android:textColor="#EFCA08"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/rigtigtOrd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
         android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/prøvIgen"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="140dp"
+        android:text="@string/prov_igen"
+        android:background="@drawable/buttonshapecolor" />
+
+    <Button
+        android:id="@+id/tilStart"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="210dp"
+        android:text="@string/tilbage_til_start"
+        android:background="@drawable/buttonshapecolor" />
 
 </FrameLayout>

@@ -6,4 +6,15 @@
     <string name="nyt_spil">Nyt Spil</string>
     <string name="high_score">High Score</string>
     <string name="indstillinger_text">Indstillinger</string>
+    <string name="rediger_ord">Rediger Ord</string>
+    <string name="galgeleg">Galgeleg</string>
+    <string name="multi_spillere">2 Spillere</string>
+    <string name="hjaelp">Hjælp</string>
+    <string name="to_spillere">To Spillere</string>
+    <string name="prov_igen">Prøv Igen</string>
+    <string name="tilbage_til_start">Tilbage Til Start</string>
+    <string name="du_har_tabt">Du har tabt!</string>
+    <string name="spiller_1">Spiller 1</string>
+    <string name="start">Start</string>
+    <string name="indtast_et_ord">Indtast et ord:</string>
 </resources>

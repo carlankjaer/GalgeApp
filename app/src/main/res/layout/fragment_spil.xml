@@ -122,14 +122,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:gravity="center_horizontal" />
+            android:gravity="center_horizontal"
+            android:maxLength="1"/>
 
         <Button
             android:id="@+id/tjekBogstav"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
-            android:background="#F49F0A"
+            android:textAlignment="center"
+            android:background="@drawable/buttonshapecolor"
             android:text="Tjek" />
 
     </LinearLayout>

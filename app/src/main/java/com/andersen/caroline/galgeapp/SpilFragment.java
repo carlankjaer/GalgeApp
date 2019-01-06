@@ -20,6 +20,7 @@ public class SpilFragment extends Fragment implements View.OnClickListener {
     private TextView ord, forkertBogstav, loadText;
     private Button tjekBogstav;
     private ProgressBar progressBar;
+    private int score;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -121,8 +122,6 @@ public class SpilFragment extends Fragment implements View.OnClickListener {
         }
 
         if (spil.erSpilletVundet()) {
-            
-
             Bundle bundle = new Bundle();
             bundle.putInt("antalForsøg", spil.getAntalForkerteBogstaver());
 

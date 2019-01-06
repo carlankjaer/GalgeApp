@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
         android:fontFamily="@font/annie_use_your_telescope"
-        android:text="Galgeleg"
+        android:text="@string/galgeleg"
         android:textColor="#EFCA08"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,25 +26,34 @@
         android:id="@+id/nytSpil"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#F49F0A"
+        android:background="@drawable/buttonshapecolor"
         android:text="@string/nyt_spil"
         android:layout_marginTop="150dp" />
+
+    <Button
+        android:id="@+id/toSpillere"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/buttonshapecolor"
+        android:text="@string/to_spillere"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/nytSpil"/>
 
     <Button
         android:id="@+id/highScore"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#F49F0A"
+        android:background="@drawable/buttonshapecolor"
         android:text="@string/high_score"
-        android:layout_below="@+id/nytSpil"
+        android:layout_below="@+id/toSpillere"
         android:layout_marginTop="10dp" />
 
     <Button
-        android:id="@+id/indstillinger"
+        android:id="@+id/redigerOrd"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#F49F0A"
-        android:text="@string/indstillinger_text"
+        android:background="@drawable/buttonshapecolor"
+        android:text="@string/rediger_ord"
         android:layout_below="@+id/highScore"
         android:layout_marginTop="10dp" />
 
@@ -53,9 +62,9 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
-        android:background="#F49F0A"
-        android:text="Hjælp"
-        android:layout_below="@+id/indstillinger"
+        android:background="@drawable/buttonshapecolor"
+        android:text="@string/hjaelp"
+        android:layout_below="@+id/redigerOrd"
         android:layout_marginTop="10dp" />
 
 </RelativeLayout>
