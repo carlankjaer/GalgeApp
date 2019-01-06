@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="330dp"
     android:layout_height="match_parent"
@@ -8,23 +8,25 @@
     tools:context=".RedigerOrdFragment">
 
     <TextView
-        android:id="@+id/indstillingerOverskrift"
+        android:id="@+id/redigerOverskrift"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rediger Ord"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:textSize="40sp"
         android:fontFamily="@font/annie_use_your_telescope"
-        android:textColor="#EFCA08"/>
+        android:text="Rediger Ord"
+        android:textColor="#EFCA08"
+        android:textSize="40sp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp">
+        android:layout_below="@+id/redigerOverskrift"
+        android:layout_alignParentStart="true"
+        android:scrollbars="vertical">
+
     </android.support.v7.widget.RecyclerView>
 
-
-
-</FrameLayout>
+</RelativeLayout>
