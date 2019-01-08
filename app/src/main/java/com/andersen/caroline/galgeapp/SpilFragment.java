@@ -1,6 +1,8 @@
 package com.andersen.caroline.galgeapp;
 
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,56 +12,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class SpilFragment extends Fragment implements View.OnClickListener {
 
     Galgelogik spil;
+
     private EditText bogstav;
-    private TextView ord, forkertBogstav, loadText;
+    private TextView ord, forkertBogstav;
     private Button tjekBogstav;
-    private ProgressBar progressBar;
     private int score;
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        class AsyncTask1 extends AsyncTask {
-
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                progressBar.setVisibility(View.VISIBLE);
-                loadText.setVisibility(View.VISIBLE);
-                tjekBogstav.setEnabled(false);
-                bogstav.setEnabled(false);
-            }
-
-            @Override
-            protected Object doInBackground(Object... arg0) {
-                try {
-                    spil.hentOrdFraDr();
-                    return "Ordene blev korrekt hentet fra DR's server";
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    return "Ordene blev ikke hentet korrekt: "+e;
-                }
-            }
-
-            @Override
-            protected void onPostExecute(Object resultat) {
-                progressBar.setVisibility(View.INVISIBLE);
-                loadText.setVisibility(View.INVISIBLE);
-                tjekBogstav.setEnabled(true);
-                bogstav.setEnabled(true);
-                spil.logStatus();
-                ord.setText(spil.getSynligtOrd());
-            }
-        }
-        new AsyncTask1().execute();
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -71,12 +33,45 @@ public class SpilFragment extends Fragment implements View.OnClickListener {
         tjekBogstav = view.findViewById(R.id.tjekBogstav);
         ord = view.findViewById(R.id.ord);
         forkertBogstav = view.findViewById(R.id.forkertBogstav);
-        loadText = view.findViewById(R.id.loadText);
-        progressBar = view.findViewById(R.id.progressBar);
 
         tjekBogstav.setOnClickListener(this);
 
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        class AsyncTask1 extends AsyncTask {
+
+            ProgressDialog progressDialog;
+
+            @Override
+            protected Object doInBackground(Object[] objects) {
+                try {
+                    spil.hentOrdFraDr();
+                    return "Ordene blev korrekt hentet fra DR's server";
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return "Ordene blev ikke hentet korrekt: "+e;
+                }
+            }
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                progressDialog = ProgressDialog.show(getActivity(), "ProgressDialog", "Vent venligst");
+            }
+
+            @Override
+            protected void onPostExecute(Object resultat) {
+                spil.logStatus();
+                ord.setText(spil.getSynligtOrd());
+                progressDialog.dismiss();
+            }
+        }
+        new AsyncTask1().execute();
     }
 
     @Override

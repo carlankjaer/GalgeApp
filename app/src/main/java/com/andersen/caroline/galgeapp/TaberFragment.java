@@ -1,5 +1,6 @@
 package com.andersen.caroline.galgeapp;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 public class TaberFragment extends Fragment implements View.OnClickListener {
 
     Galgelogik spil;
+    MediaPlayer player;
     TextView rigtigtOrd;
     Button prøvIgen, tilStart;
 
@@ -32,6 +34,9 @@ public class TaberFragment extends Fragment implements View.OnClickListener {
         Bundle bundle = this.getArguments();
 
         rigtigtOrd.setText("Ordet var: " + bundle.getString("ord"));
+
+        player = MediaPlayer.create(this.getActivity(), R.raw.loser_sound);
+        player.start();
 
         return v;
     }

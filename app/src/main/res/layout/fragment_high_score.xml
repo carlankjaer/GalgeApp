@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="330dp"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
     tools:context=".HighScoreFragment">
@@ -18,9 +19,11 @@
         android:fontFamily="@font/annie_use_your_telescope"
         android:textColor="#EFCA08"/>
 
-    <ListView
-        android:id="@+id/highScoreListe"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:padding="4dp"/>
 
 </LinearLayout>

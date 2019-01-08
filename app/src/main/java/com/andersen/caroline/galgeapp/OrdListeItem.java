@@ -1,10 +1,10 @@
 package com.andersen.caroline.galgeapp;
 
-public class ExampleItem {
+public class OrdListeItem {
 
     private String listeOrd;
 
-    public ExampleItem(String listeOrd) {
+    public OrdListeItem(String listeOrd) {
         this.listeOrd = listeOrd;
     }
 

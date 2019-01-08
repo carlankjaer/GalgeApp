@@ -1,5 +1,7 @@
 package com.andersen.caroline.galgeapp;
 
+import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -9,8 +11,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import nl.dionsegijn.konfetti.KonfettiView;
+import nl.dionsegijn.konfetti.models.Shape;
+import nl.dionsegijn.konfetti.models.Size;
+
 public class VinderFragment extends Fragment implements View.OnClickListener {
 
+    MediaPlayer player;
+    KonfettiView viewKonfetti;
     TextView antalForsøgTekst, dinScore;
     Button prøvIgen, tilStart;
 
@@ -19,6 +27,7 @@ public class VinderFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_vinder, container, false);
 
+        viewKonfetti = v.findViewById(R.id.viewKonfetti);
         antalForsøgTekst = v.findViewById(R.id.antalForsøgTekst);
         dinScore = v.findViewById(R.id.dinScore);
         prøvIgen = v.findViewById(R.id.prøvIgen);
@@ -30,6 +39,20 @@ public class VinderFragment extends Fragment implements View.OnClickListener {
         Bundle bundle = this.getArguments();
 
         antalForsøgTekst.setText("Du brugte " + bundle.getInt("antalForsøg") + " forsøg");
+
+        player = MediaPlayer.create(this.getActivity(), R.raw.winner_sound);
+        player.start();
+
+        viewKonfetti.build()
+                .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
+                .setDirection(359.0, 0.0)
+                .setSpeed(1f, 5f)
+                .setFadeOutEnabled(true)
+                .setTimeToLive(2000L)
+                .addShapes(Shape.RECT, Shape.CIRCLE)
+                .addSizes(new Size(12, 5))
+                .setPosition(-50f, viewKonfetti.getWidth() + 50f, -50f, -50f)
+                .streamFor(100, 3000L);
 
         return v;
     }

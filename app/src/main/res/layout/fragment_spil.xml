@@ -142,20 +142,6 @@
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="103dp"
-            android:layout_height="113dp"
-            android:layout_gravity="center" />
-
-        <TextView
-            android:id="@+id/loadText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Vent venligst"
-            android:textSize="24sp" />
-
     </LinearLayout>
 
 </RelativeLayout>

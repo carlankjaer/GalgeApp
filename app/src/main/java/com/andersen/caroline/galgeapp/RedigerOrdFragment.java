@@ -20,9 +20,9 @@ public class RedigerOrdFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_rediger_ord, container, false);
 
-        ArrayList<ExampleItem> ordListe = new ArrayList<>();
-        ordListe.add(new ExampleItem("Ære"));
-        ordListe.add(new ExampleItem("Hejsa"));
+        ArrayList<OrdListeItem> ordListe = new ArrayList<>();
+        ordListe.add(new OrdListeItem("Ære"));
+        ordListe.add(new OrdListeItem("Hejsa"));
 
         recyclerView = v.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -34,4 +34,6 @@ public class RedigerOrdFragment extends Fragment {
 
         return v;
     }
+
+
 }
