@@ -31,11 +31,11 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="122dp">
+        android:layout_marginTop="70dp">
 
         <ImageView
             android:id="@+id/galge"
@@ -84,6 +84,8 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
             android:visibility="invisible"
             app:srcCompat="@drawable/ben2" />
 
@@ -93,18 +95,20 @@
         android:id="@+id/ord"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="121dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="300dp"
         android:gravity="center"
         android:textSize="30sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="245dp"
         android:orientation="horizontal">
 
         <TextView
@@ -121,18 +125,18 @@
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
             android:gravity="center_horizontal"
-            android:maxLength="1"/>
+            android:inputType="text"
+            android:maxLength="1" />
 
         <Button
             android:id="@+id/tjekBogstav"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
-            android:textAlignment="center"
             android:background="@drawable/buttonshapecolor"
-            android:text="Tjek" />
+            android:text="Tjek"
+            android:textAlignment="center" />
 
     </LinearLayout>
 

@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class MenuFragment extends Fragment implements View.OnClickListener {
 
-    Button nytSpil, toSpillere, highScore, redigerOrd, hjælp;
+    Button nytSpil, toSpillere, highScore, redigerOrd;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -21,13 +21,11 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         toSpillere = v.findViewById(R.id.toSpillere);
         highScore = v.findViewById(R.id.highScore);
         redigerOrd = v.findViewById(R.id.redigerOrd);
-        hjælp = v.findViewById(R.id.hjælp);
 
         nytSpil.setOnClickListener(this);
         toSpillere.setOnClickListener(this);
         highScore.setOnClickListener(this);
         redigerOrd.setOnClickListener(this);
-        hjælp.setOnClickListener(this);
         return v;
     }
 
@@ -43,7 +41,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.toSpillere:
                 FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
-                fragmentTransaction2.replace(R.id.frameLayout, new ToSpillereFragment()).addToBackStack("tilbage");
+                fragmentTransaction2.replace(R.id.frameLayout, new RedigerOrdFragment()).addToBackStack("tilbage");
                 fragmentTransaction2.commit();
                 break;
             case R.id.highScore:
@@ -55,11 +53,6 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
                 FragmentTransaction fragmentTransaction4 = getFragmentManager().beginTransaction();
                 fragmentTransaction4.replace(R.id.frameLayout, new RedigerOrdFragment()).addToBackStack("tilbage");
                 fragmentTransaction4.commit();
-                break;
-            case R.id.hjælp:
-                FragmentTransaction fragmentTransaction5 = getFragmentManager().beginTransaction();
-                fragmentTransaction5.replace(R.id.frameLayout, new HjaelpFragment()).addToBackStack("tilbage");
-                fragmentTransaction5.commit();
                 break;
         }
     }

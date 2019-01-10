@@ -1,7 +1,10 @@
 package com.andersen.caroline.galgeapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class RedigerOrdFragment extends Fragment {
     ArrayList<OrdListeItem> ordListe;
@@ -22,7 +27,7 @@ public class RedigerOrdFragment extends Fragment {
     private Button tilføjOrd;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_rediger_ord, container, false);
 
@@ -48,6 +53,8 @@ public class RedigerOrdFragment extends Fragment {
         ordListe.add(new OrdListeItem("baseball"));
         ordListe.add(new OrdListeItem("begravet"));
 
+        sorterListe();
+
         indtastOrd = v.findViewById(R.id.indtastOrd);
         tilføjOrd = v.findViewById(R.id.tilføjOrd);
 
@@ -68,6 +75,17 @@ public class RedigerOrdFragment extends Fragment {
 
         adapter.setOnItemClickListener(new ItemAdapter.OnItemClickListener() {
             @Override
+            public void onItemClick(int position) {
+                Bundle bundle = new Bundle();
+                bundle.putString("Valgt ord", ordListe.get(position).getListeOrd());
+
+                ToSpillereFragment toSpillereFragment = new ToSpillereFragment();
+                toSpillereFragment.setArguments(bundle);
+
+                getFragmentManager().beginTransaction().replace(R.id.frameLayout, toSpillereFragment).commit();
+            }
+
+            @Override
             public void onDeleteClick(int position) {
                 fjernItem(position);
             }
@@ -84,5 +102,15 @@ public class RedigerOrdFragment extends Fragment {
     public void tilføjItem() {
         ordListe.add(new OrdListeItem(indtastOrd.getText().toString()));
         adapter.notifyDataSetChanged();
+        sorterListe();
+    }
+
+    public void sorterListe() {
+        Collections.sort(ordListe, new Comparator<OrdListeItem>() {
+            @Override
+            public int compare(OrdListeItem o1, OrdListeItem o2) {
+                return o1.getListeOrd().compareToIgnoreCase(o2.getListeOrd());
+            }
+        });
     }
 }

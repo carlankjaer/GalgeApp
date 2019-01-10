@@ -17,7 +17,7 @@ public class ToSpillereFragment extends Fragment implements View.OnClickListener
     private EditText bogstav;
     private TextView ord, forkertBogstav;
     private Button tjekBogstav;
-    private int score = 0;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,6 +31,8 @@ public class ToSpillereFragment extends Fragment implements View.OnClickListener
         forkertBogstav = view.findViewById(R.id.forkertBogstav);
 
         tjekBogstav.setOnClickListener(this);
+
+        indlæsValgtOrd();
 
         return view;
     }
@@ -81,12 +83,24 @@ public class ToSpillereFragment extends Fragment implements View.OnClickListener
             Bundle bundle = new Bundle();
             bundle.putInt("antalForsøg", spil.getAntalForkerteBogstaver());
 
-            VinderFragment vinderFragment = new VinderFragment();
-            vinderFragment.setArguments(bundle);
+            ToSpillereVinderFragment toSpillereVinderFragment = new ToSpillereVinderFragment();
+            toSpillereVinderFragment.setArguments(bundle);
 
             FragmentTransaction fragmentTransaction3 = getFragmentManager().beginTransaction();
-            fragmentTransaction3.replace(R.id.frameLayout, vinderFragment).addToBackStack(null);
+            fragmentTransaction3.replace(R.id.frameLayout, toSpillereVinderFragment).addToBackStack(null);
             fragmentTransaction3.commit();
+        }
+    }
+
+    public void indlæsValgtOrd() {
+        Bundle bundle = this.getArguments();
+
+        if (bundle != null) {
+            String valgtOrd = bundle.getString("Valgt ord");
+            spil.muligeOrd.clear();
+            spil.muligeOrd.add(valgtOrd);
+            spil.nulstil();
+            ord.setText(spil.getSynligtOrd());
         }
     }
 }

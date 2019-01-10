@@ -4,23 +4,17 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class HighScoreFragment extends Fragment {
     private ArrayList<HighscoreItem> highscoreList;
     private String nyScore;
-    private String highscore;
     private String nytBrugernavn;
 
     private RecyclerView recyclerView;
@@ -58,8 +52,5 @@ public class HighScoreFragment extends Fragment {
 
         highscoreList.add(new HighscoreItem(nytBrugernavn, "" + nyScore));
         adapter.notifyDataSetChanged();
-    }
-
-    public void compareTo(String highscore, String nyScore) {
     }
 }
