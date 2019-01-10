@@ -1,8 +1,8 @@
 package com.andersen.caroline.galgeapp;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -21,7 +21,7 @@ public class SpilFragment extends Fragment implements View.OnClickListener {
     private EditText bogstav;
     private TextView ord, forkertBogstav;
     private Button tjekBogstav;
-    private int score;
+    private int score = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -127,5 +127,32 @@ public class SpilFragment extends Fragment implements View.OnClickListener {
             fragmentTransaction3.replace(R.id.frameLayout, vinderFragment).addToBackStack(null);
             fragmentTransaction3.commit();
         }
+
+        udregnScore();
+        gemScore(score);
+    }
+
+    public void udregnScore() {
+        if (spil.erSidsteBogstavKorrekt()) {
+            score += 100;
+        }
+        else if (!spil.erSpilletVundet()) {
+            score -= 50;
+        }
+
+        if (spil.erSpilletVundet()) {
+            score += 200;
+        }
+        else if (spil.erSpilletTabt()) {
+            score -= 200;
+        }
+    }
+
+    public void gemScore(int score) {
+        //Gem score
+        SharedPreferences minScore = getActivity().getSharedPreferences("Min score", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = minScore.edit();
+        editor.putString("score", ""+score);
+        editor.apply();
     }
 }

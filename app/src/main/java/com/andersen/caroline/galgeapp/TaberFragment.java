@@ -1,5 +1,7 @@
 package com.andersen.caroline.galgeapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,8 +16,9 @@ public class TaberFragment extends Fragment implements View.OnClickListener {
 
     Galgelogik spil;
     MediaPlayer player;
-    TextView rigtigtOrd;
+    TextView rigtigtOrd, dinScore;
     Button prøvIgen, tilStart;
+    String nyScore;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -25,6 +28,7 @@ public class TaberFragment extends Fragment implements View.OnClickListener {
 
         spil = new Galgelogik();
         rigtigtOrd = v.findViewById(R.id.rigtigtOrd);
+        dinScore = v.findViewById(R.id.dinScore);
         prøvIgen = v.findViewById(R.id.prøvIgen);
         tilStart = v.findViewById(R.id.tilStart);
 
@@ -33,7 +37,11 @@ public class TaberFragment extends Fragment implements View.OnClickListener {
 
         Bundle bundle = this.getArguments();
 
+        SharedPreferences minScore = getContext().getSharedPreferences("Min score", Context.MODE_PRIVATE);
+        nyScore = minScore.getString("score", "");
+
         rigtigtOrd.setText("Ordet var: " + bundle.getString("ord"));
+        dinScore.setText("Din score: " + nyScore);
 
         player = MediaPlayer.create(this.getActivity(), R.raw.loser_sound);
         player.start();

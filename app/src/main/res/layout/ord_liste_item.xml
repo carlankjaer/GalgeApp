@@ -23,8 +23,8 @@
 
         <ImageView
             android:id="@+id/deleteIcon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:src="@drawable/ic_delete_black_24dp" />

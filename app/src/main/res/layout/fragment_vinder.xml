@@ -26,6 +26,7 @@
         android:id="@+id/antalForsøgTekst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Antal forsøg"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
@@ -35,19 +36,19 @@
     <TextView
         android:id="@+id/dinScore"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="52dp"
         android:layout_above="@+id/prøvIgen"
         android:layout_below="@+id/antalForsøgTekst"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="89dp"
-        android:layout_toEndOf="@+id/antalForsøgTekst"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="65dp"
+        android:text="score"
         android:textSize="20sp" />
 
     <Button
         android:id="@+id/prøvIgen"
-        android:layout_width="193dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/tilStart"
         android:layout_alignParentStart="true"
@@ -61,7 +62,7 @@
 
     <Button
         android:id="@+id/tilStart"
-        android:layout_width="201dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/viewKonfetti"
         android:layout_alignParentStart="true"
@@ -77,7 +78,6 @@
         android:id="@+id/viewKonfetti"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp" />

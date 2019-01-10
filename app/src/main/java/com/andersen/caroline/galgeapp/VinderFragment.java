@@ -1,5 +1,7 @@
 package com.andersen.caroline.galgeapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -21,6 +23,7 @@ public class VinderFragment extends Fragment implements View.OnClickListener {
     KonfettiView viewKonfetti;
     TextView antalForsøgTekst, dinScore;
     Button prøvIgen, tilStart;
+    String nyScore;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,7 +41,11 @@ public class VinderFragment extends Fragment implements View.OnClickListener {
 
         Bundle bundle = this.getArguments();
 
+        SharedPreferences minScore = getContext().getSharedPreferences("Min score", Context.MODE_PRIVATE);
+        nyScore = minScore.getString("score", "");
+
         antalForsøgTekst.setText("Du brugte " + bundle.getInt("antalForsøg") + " forsøg");
+        dinScore.setText("Din score: " + nyScore);
 
         player = MediaPlayer.create(this.getActivity(), R.raw.winner_sound);
         player.start();

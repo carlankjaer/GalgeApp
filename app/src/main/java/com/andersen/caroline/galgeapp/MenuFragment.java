@@ -38,6 +38,8 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
                 FragmentTransaction fragmentTransaction1 = getFragmentManager().beginTransaction();
                 fragmentTransaction1.replace(R.id.frameLayout, new SpilFragment()).addToBackStack("tilbage");
                 fragmentTransaction1.commit();
+
+                openDialog();
                 break;
             case R.id.toSpillere:
                 FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
@@ -60,5 +62,10 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
                 fragmentTransaction5.commit();
                 break;
         }
+    }
+
+    public void openDialog() {
+        BrugernavnDialog brugernavnDialog = new BrugernavnDialog();
+        brugernavnDialog.show(getFragmentManager(), "dialog");
     }
 }

@@ -12,22 +12,14 @@
         android:layout_margin="4dp">
 
         <TextView
-            android:id="@+id/placering"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-
-        <TextView
             android:id="@+id/highscoreNavn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="4dp"
             android:text="Navn"
-            android:layout_toRightOf="@+id/placering"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="16dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/highscore"
@@ -37,7 +29,7 @@
             android:layout_alignParentEnd="true"
             android:text="score"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

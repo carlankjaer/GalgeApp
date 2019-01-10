@@ -1,15 +1,12 @@
 package com.andersen.caroline.galgeapp;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BrugernavnDialog.BrugernavnDialogListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +19,12 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    public void saveScores(View view) {
-        SharedPreferences sharedPreferences = getSharedPreferences("scores", Context.MODE_PRIVATE);
-        
+    @Override
+    public void gemBrugernavn(String brugernavn) {
+        //Gem indtastet brugernavn
+        SharedPreferences mitBrugenavn = getSharedPreferences("Mit brugernavn", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = mitBrugenavn.edit();
+        editor.putString("brugernavn", brugernavn);
+        editor.apply();
     }
 }

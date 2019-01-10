@@ -15,13 +15,11 @@ public class HighscoreAdapter extends RecyclerView.Adapter<HighscoreAdapter.High
     public static class HighscoreViewHolder extends RecyclerView.ViewHolder {
         public TextView textView1;
         public TextView textView2;
-        public TextView textView3;
 
         public HighscoreViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView1 = itemView.findViewById(R.id.placering);
-            textView2 = itemView.findViewById(R.id.highscoreNavn);
-            textView3 = itemView.findViewById(R.id.highscore);
+            textView1 = itemView.findViewById(R.id.highscoreNavn);
+            textView2 = itemView.findViewById(R.id.highscore);
         }
     }
 
@@ -41,9 +39,8 @@ public class HighscoreAdapter extends RecyclerView.Adapter<HighscoreAdapter.High
     public void onBindViewHolder(@NonNull HighscoreViewHolder highscoreViewHolder, int position) {
         HighscoreItem currentItem = highscoreList.get(position);
 
-        highscoreViewHolder.textView1.setText(currentItem.getPlacering());
-        highscoreViewHolder.textView2.setText(currentItem.getHighscoreNavn());
-        highscoreViewHolder.textView3.setText(currentItem.getHighscore());
+        highscoreViewHolder.textView1.setText(currentItem.getHighscoreNavn());
+        highscoreViewHolder.textView2.setText(currentItem.getHighscore());
     }
 
     @Override
